@@ -14,6 +14,7 @@ You will be getting involved on this! We have setting up user service to manage 
 - Create a new task in a list (the task should be prepended to the list and the
   status should indicate it has not been completed)
 - Update a task (title and status)
+- Delete a task or list
 - Move a task to a specific position in the list
 - Retrieve all lists and their tasks
 
