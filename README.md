@@ -22,6 +22,8 @@ You will be getting involved on this! We have setting up user service to manage 
 
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
+- [Testing](#testing)
+- [Linting](#linting)
 
 ### Prerequisites
 
@@ -41,4 +43,12 @@ This is the instruction to setup this project and run in your local machine. Not
 4. Run `pnpm db:migrate` to initiate database.
 5. Run `pnpm codegen` to generate TypeScript definition for GraphQL and Prisma client.
 6. Run `pnpm start` to start the project.
-7. Go to `http://localhost:4000`, you should see Apollo Playground with two queries `users` and `user`. You may change the port according to `GATEWAY_PORT` in your `.env` file.
+7. Go to `http://localhost:4000`, you should see Apollo Playground. You may change the port according to `GATEWAY_PORT` in your `.env` file.
+
+### Testing
+
+Run `pnpm test`
+
+### Linting
+
+Run `pnpm format`

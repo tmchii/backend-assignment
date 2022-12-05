@@ -8,6 +8,6 @@ export interface Context {
 export function createContext(ctx: ExpressContext): Context {
   return {
     ...ctx,
-    prisma: new PrismaClient(),
+    prisma: new PrismaClient({ log: ['query', 'info', 'warn', 'error'] }),
   }
 }

@@ -23,10 +23,19 @@ async function createSubSchemas() {
     `http://localhost:${process.env.USER_SERVICE_PORT}`
   )
 
+  const taskExecutor = createRemoteExecutor(
+    `http://localhost:${process.env.TASK_SERVICE_PORT}`
+  )
+
+
   return Promise.all([
     {
       schema: await introspectSchema(userExecutor),
       executor: userExecutor,
+    },
+    {
+      schema: await introspectSchema(taskExecutor),
+      executor: taskExecutor,
     },
   ])
 }

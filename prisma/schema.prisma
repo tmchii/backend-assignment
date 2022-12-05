@@ -1,14 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DB_URL")
-}
-
-generator client {
-  provider = "prisma-client-js"
 }
 
 model User {
   id       String @id @default(uuid())
   username String
   password String
+}
+
+model List {
+  id    String @id @default(uuid())
+  title String
+  tasks Task[]
+}
+
+model Task {
+  id       String     @id @default(uuid())
+  title    String
+  status   TaskStatus
+  listId   String
+  priority Int
+  list     List       @relation(fields: [listId], references: [id])
+
+  @@unique([listId, priority], map: "unique_priority_constraint")
+}
+
+enum TaskStatus {
+  COMPLETED
+  PENDING
 }

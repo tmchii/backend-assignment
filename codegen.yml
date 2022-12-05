@@ -1,6 +1,8 @@
 generates:
   generated/types.ts:
     schema: 'services/**/schema.ts'
+    config:
+      enumsAsConst: true
     plugins:
       - typescript
       - typescript-resolvers

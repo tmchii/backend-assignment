@@ -8,7 +8,7 @@ export async function startServer(): Promise<void> {
     resolvers,
   })
 
-  const { url } = await server.listen(Number(process.env.USER_SERVICE_PORT))
+  const { url } = await server.listen(Number(process.env.TASK_SERVICE_PORT))
 
-  console.log(`User service running at ${url}`)
+  console.log(`Task service running at ${url}`)
 }
